@@ -181,6 +181,7 @@ func (cfg *config) start1(i int) {
 				}
 				_, prevok := cfg.logs[i][m.CommandIndex-1]
 				cfg.logs[i][m.CommandIndex] = v
+                                // fmt.Println("[heaven's killshot] v/cmd/, i/me/ = ", v, i)
 				if m.CommandIndex > cfg.maxIndex {
 					cfg.maxIndex = m.CommandIndex
 				}
@@ -452,6 +453,7 @@ func (cfg *config) one(cmd int, expectedServers int, retry bool) int {
 			t1 := time.Now()
 			for time.Since(t1).Seconds() < 2 {
 				nd, cmd1 := cfg.nCommitted(index)
+                                // fmt.Println("[CONFIIIIIIIIG] nd, cmd1 = ", nd, cmd1)
 				if nd > 0 && nd >= expectedServers {
 					// committed
 					if cmd2, ok := cmd1.(int); ok && cmd2 == cmd {
