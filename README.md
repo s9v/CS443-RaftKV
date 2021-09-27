@@ -1,2 +1,3 @@
-# CS443-RaftKV
-# Please, DO NOT FORK!
+# RaftKV
+
+Raft distributed consensus algorithm implemented in Golang.
